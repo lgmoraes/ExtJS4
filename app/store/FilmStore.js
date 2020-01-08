@@ -10,6 +10,7 @@ Ext.define("formation.store.FilmStore", {
         {name: 'prix', type: 'float'},
         {name: 'available', type: 'bool'}
     ],
+    groupField: 'genre',
     proxy: {
         type: 'ajax',
         url: 'data/getFilm.php',

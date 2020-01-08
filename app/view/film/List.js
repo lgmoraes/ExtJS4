@@ -17,9 +17,13 @@ Ext.define('formation.view.film.List', {
             {header: 'Disponible', dataIndex: 'available', renderer: bool2fr}
         ];
         this.callParent(arguments);
-    }
+    },
+    features: [
+        {
+            ftype: 'grouping'
+        }
+    ],
 });
-
 function bool2fr(bool)
 {
     return bool ? "Oui" : "Non";
