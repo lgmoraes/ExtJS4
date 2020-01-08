@@ -4,6 +4,9 @@ Ext.define('formation.view.film.List', {
     store: 'FilmStore',
     initComponent: function()
     {
+        this.bbar = new Ext.toolbar.Paging({
+            store: 'FilmStore'
+        });
         this.columns = [
             {header: 'Couverture', dataIndex: 'thumbs', hidden: true},
             {header: 'Titre', dataIndex: 'title', renderer: title_shortDescription},
