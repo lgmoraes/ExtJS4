@@ -1,7 +1,7 @@
 Ext.define('formation.controller.Film', {
     extend: 'Ext.app.Controller',
-    views: ['film.Create'],
-    stores: ['FilmStore'],
+    views: ['film.Create', 'film.List'],
+    stores: ['FilmStore', 'GenreStore'],
     init: function()
     {
         this.control({

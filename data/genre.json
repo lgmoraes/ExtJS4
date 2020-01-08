@@ -1,0 +1,9 @@
+{
+    "success": true,
+    "rows":
+    [
+        {"id": "1", "genre": "Aventure"},
+        {"id": "2", "genre": "Action"},
+        {"id": "3", "genre": "Comédie"}
+    ]
+}

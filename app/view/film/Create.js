@@ -35,7 +35,7 @@ Ext.define('formation.view.film.Create', {
                     {
                         if (event.getKey() == event.ENTER)
                         {
-                            // Code
+                            field.nextSibling().focus();
                         }
                     }
                 }
@@ -72,7 +72,7 @@ Ext.define('formation.view.film.Create', {
                 xtype: 'combo',
                 name: 'genre',
                 fieldLabel: 'Genre',
-                store: 'FilmStore',
+                store: 'GenreStore',
                 displayField: 'genre',
                 width: 250,
                 listeners: {
@@ -91,7 +91,7 @@ Ext.define('formation.view.film.Create', {
                         });
                     }
                 }
-            },
+            }
         ];
         this.callParent(arguments);
     }
