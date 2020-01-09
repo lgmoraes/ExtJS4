@@ -6,21 +6,41 @@ Ext.application({
     launch: function()
     {
         Ext.create('Ext.container.Viewport', {
-            margin: 8,
+            layout: 'border',
             items: [
                 {
-                    title: 'Ajouter un film',
-                    xtype: 'filmcreate'
+                    xtype: 'panel',
+                    region: 'west',
+                    split: true,
+                    collapsible: true,
+                    title: 'Side Bar',
+                    bodyStyle: 'padding: 5px;',
+                    width: 300,
+                    minWidth: 50,
+                    items: [
+                        {
+                            title: 'Ajouter un film',
+                            xtype: 'filmcreate'
+                        }
+                    ]
                 },
                 {
-                    html: '<hr>',
-                    border: 0
-                },
-                {
-                    title: 'Liste des films',
-                    xtype: 'filmlist',
+                    region: 'center',
+                    xtype: 'tabpanel',
+                    activeTab: 0,
+                    items: [
+                        {
+                            title: 'Liste des films',
+                            xtype: 'filmlist'
+                        },
+                        {
+                            title: 'Editer les films',
+                            xtype: 'filmedit'
+                        }
+                    ]
                 }
             ]
-        });
+        }
+        );
     }
 });

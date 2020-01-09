@@ -22,7 +22,7 @@ Ext.define('formation.view.film.List', {
         {
             ftype: 'grouping'
         }
-    ],
+    ]
 });
 function bool2fr(bool)
 {
