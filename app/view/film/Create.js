@@ -9,13 +9,6 @@ Ext.define('formation.view.film.Create', {
                 action: 'save'
             },
             {
-                text: 'Annuler',
-                handler: function()
-                {
-                    Ext.MessageBox.alert('Annulé', 'L\'action a été annulé !');
-                }
-            },
-            {
                 text: 'Réinitialiser',
                 handler: function(element)
                 {
@@ -28,7 +21,7 @@ Ext.define('formation.view.film.Create', {
             {
                 xtype: 'textfield',
                 fieldLabel: 'Titre',
-                name: 'titre',
+                name: 'title',
                 allowBlank: false,
                 listeners: {
                     specialkey: function(field, event, options)
@@ -43,7 +36,7 @@ Ext.define('formation.view.film.Create', {
             {
                 xtype: 'textfield',
                 fieldLabel: 'Réalisateur',
-                name: 'realisateur',
+                name: 'producer',
                 vtype: 'alpha'
             },
             {

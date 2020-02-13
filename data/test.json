@@ -1,8 +1,0 @@
-{
-    "success": true,
-    "errors":
-    {
-        "title": "Titre de l'erreur",
-        "msg": "Message d'erreur."
-    }
-}

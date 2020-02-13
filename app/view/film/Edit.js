@@ -3,7 +3,6 @@ Ext.define('formation.view.film.Edit', {
     alias: 'widget.filmedit',
     autoShow: true,
     title: 'Modifier un film !',
-    layout: 'fit',
     initComponent: function()
     {
         this.buttons = [
@@ -21,55 +20,73 @@ Ext.define('formation.view.film.Edit', {
         ];
         this.items = [
             {
-                xtype: 'form',
-                width: 800,
-                items: [
+                xtype: 'textfield',
+                fieldLabel: 'Titre',
+                name: 'title',
+                allowBlank: false,
+                listeners: {
+                    specialkey: function(field, event, options)
                     {
-                        xtype: 'grid',
-                        border: false,
-                        closabel: true,
-                        columns: [
-                            {header: 'Couverture', dataIndex: 'thumbs', hidden: true},
-                            {header: 'Titre', dataIndex: 'title', editor: {
-                                    xtype: 'textfield',
-                                    allowBlank: false
-                                }
-                            },
-                            {header: 'Réalisateur', dataIndex: 'producer', editor: {
-                                    xtype: 'textfield',
-                                    allowBlank: false
-                                }
-                            },
-                            {header: 'Date de sortie', dataIndex: 'date_de_sortie', renderer: Ext.util.Format.dateRenderer('d/m/Y'), editor: {
-                                    xtype: 'datefield',
-                                    allowBlank: false
-                                }
-                            },
-                            {header: 'Genre', dataIndex: 'genre', editor: {
-                                    xtype: 'combo',
-                                    store: 'GenreStore',
-                                    displayField: 'genre'
-                                }
-                            },
-                            {header: 'Description', dataIndex: 'tagline', editor: {
-                                    xtype: 'textfield',
-                                    allowBlank: false
-                                }
-                            },
-                            {header: 'Disponible', dataIndex: 'available', editor: 'checkbox'}
-                        ],
-                        plugins: {
-                            ptype: 'cellediting',
-                            clicksToEdit: 1
-                        },
-                        store: 'FilmStore'
+                        if (event.getKey() == event.ENTER)
+                        {
+                            field.nextSibling().focus();
+                        }
                     }
-                ]
+                }
+            },
+            {
+                xtype: 'textfield',
+                fieldLabel: 'Réalisateur',
+                name: 'producer',
+                vtype: 'alpha'
+            },
+            {
+                xtype: 'datefield',
+                fieldLabel: 'Date de sortie',
+                name: 'date_de_sortie',
+                disabledDays: [5, 6]
+            },
+            {
+                xtype: 'radio',
+                fieldLabel: 'Filmé en',
+                name: 'filme_en',
+                boxLabel: 'Couleur'
+            },
+            {
+                xtype: 'radio',
+                name: 'filme_en',
+                boxLabel: 'Noir et blanc'
+            },
+            {
+                xtype: 'checkbox',
+                name: 'bad_movie',
+                fieldLabel: 'Bad Movie'
+            },
+            {
+                xtype: 'combo',
+                name: 'genre',
+                fieldLabel: 'Genre',
+                store: 'GenreStore',
+                displayField: 'genre',
+                width: 250,
+                listeners: {
+                    afterrender: function()
+                    {
+
+                    },
+                    select: function(combo, records, options)
+                    {
+                        Ext.Msg.prompt('Nouveau genre', 'Nom', function(btn, input)
+                        {
+                            if (btn === 'ok' && input !== "")
+                            {
+                                // Ajout dans la liste
+                            }
+                        });
+                    }
+                }
             }
         ];
-        this.bbar = new Ext.toolbar.Paging({
-            store: 'FilmStore'
-        });
         this.callParent(arguments);
     }
 });

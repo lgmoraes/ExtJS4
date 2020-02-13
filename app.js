@@ -20,7 +20,17 @@ Ext.application({
                     items: [
                         {
                             title: 'Ajouter un film',
-                            xtype: 'filmcreate'
+                            xtype: 'filmcreate',
+                            bodyStyle: 'padding: 5px;'
+                        },
+                        {
+                            html: '<br>',
+                            border: 0
+                        },
+                        {
+                            title: 'Modifier un film',
+                            xtype: 'filmedit',
+                            bodyStyle: 'padding: 5px;'
                         }
                     ]
                 },
@@ -32,10 +42,11 @@ Ext.application({
                         {
                             title: 'Liste des films',
                             xtype: 'filmlist'
-                        },
-                        {
-                            title: 'Editer les films',
-                            xtype: 'filmedit'
+                        }, {
+                            title: 'Editer plusieurs films',
+                            xtype: 'filmeditmulti',
+                            width: 650,
+                            height: 280
                         }
                     ]
                 }

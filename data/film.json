@@ -6,6 +6,7 @@
         {"id": "2", "title": "Super Troopers", "producer": "Jay Chandrasekhar","date_de_sortie":"02/15/2002", "genre": "Comedy", "tagline": "Altered State Police", "available": true},
         {"id": "3", "title": "American Beauty", "producer": "Sam Mendes","date_de_sortie":"10/01/1999", "genre": "Drama", "tagline": "...Look Closer", "available": true},
         {"id": "4", "title": "The Big Lebowski", "producer": "Joel Coen","date_de_sortie":"03/06/1998", "genre": "Comedy", "tagline": "The \"Dude\"", "available": true},
-        {"id": "5", "title": "Fight Club", "producer": "David Fincher","date_de_sortie":"10/15/1999", "genre": "Action", "tagline": "How much can you know about yourself?", "available": true}
+        {"id": "5", "title": "Fight Club", "producer": "David Fincher","date_de_sortie":"10/15/1999", "genre": "Action", "tagline": "How much can you know about yourself?", "available": true},
+        {"id": "6", "title": "Office", "producer": "Mike Judge","date_de_sortie":"02/19/1999", "genre": "Comedy", "tagline": "Work Sucks", "available": true}
     ]
 }
